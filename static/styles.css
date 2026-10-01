@@ -1,0 +1,128 @@
+
+:root {
+  --paper: #f3ecdf;
+  --ink: #1b1714;
+  --muted: #5e564c;
+  --line: #d9cbb6;
+  --card: #fffaf3;
+  --green: #0d6b4f;
+  --green-soft: #e5f4ee;
+  --amber: #8a5a12;
+  --amber-soft: #f8e7c4;
+  --red: #8d2f24;
+  --red-soft: #f8e4df;
+  --shadow: 0 16px 40px rgba(60, 40, 15, 0.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 400px at 10% -10%, #efe2c8 0%, transparent 55%),
+    var(--paper);
+  font: 16px/1.45 "Avenir Next", "Segoe UI", sans-serif;
+}
+.top, main, footer { width: min(980px, calc(100% - 32px)); margin: 0 auto; }
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  padding: 28px 0 8px;
+}
+.brand { display: flex; gap: 14px; align-items: center; }
+.mark {
+  width: 52px; height: 52px;
+  display: grid; place-items: center;
+  border-radius: 14px;
+  background: var(--ink);
+  color: #f6e7c1;
+  font: 700 28px/1 Georgia, "Iowan Old Style", serif;
+}
+.eyebrow { margin: 0; letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; color: var(--muted); }
+h1 { margin: 0; font: 700 40px/1 Georgia, "Iowan Old Style", serif; letter-spacing: -0.03em; }
+.pill {
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 650;
+}
+.pill.sample { background: var(--amber-soft); color: var(--amber); }
+.pill.live { background: var(--green-soft); color: var(--green); }
+.search-panel, .hero, .table-wrap, .excluded {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.search-panel { padding: 18px; margin-top: 18px; }
+form { display: grid; gap: 12px; }
+label { display: grid; gap: 6px; font-size: 13px; font-weight: 650; color: var(--muted); }
+input[type="text"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 12px;
+  font: 18px/1.2 Georgia, "Iowan Old Style", serif;
+  color: var(--ink);
+}
+.toggles { display: flex; flex-wrap: wrap; gap: 14px 22px; }
+.check { display: flex; align-items: center; gap: 8px; font-weight: 550; color: var(--ink); font-size: 14px; }
+button {
+  justify-self: start;
+  border: 0;
+  background: var(--ink);
+  color: #f6efe4;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font: 650 15px/1 "Avenir Next", "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.55; cursor: wait; }
+.note, footer p { color: var(--muted); font-size: 13px; }
+.banner, .error { padding: 12px 14px; border-radius: 12px; margin: 14px 0 0; }
+.banner { background: var(--amber-soft); color: #5c3b09; }
+.error { background: var(--red-soft); color: var(--red); }
+#results { margin-top: 16px; display: grid; gap: 14px; }
+.hero { padding: 20px; display: grid; gap: 8px; }
+.kicker { margin: 0; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); font-weight: 750; }
+.hero h2 { margin: 0; font: 700 28px/1.15 Georgia, serif; }
+.price { margin: 0; font: 700 56px/1 Georgia, serif; letter-spacing: -0.04em; }
+.meta { margin: 0; color: var(--muted); }
+.gap {
+  margin-top: 6px;
+  display: inline-block;
+  background: var(--green-soft);
+  color: var(--green);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+table { width: 100%; border-collapse: collapse; }
+.table-wrap, .excluded { padding: 8px 8px 12px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+tr.winner td { background: var(--green-soft); }
+.right { text-align: right; }
+.tag {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+a { color: var(--green); }
+h3 { margin: 8px 12px; font-size: 16px; }
+.empty { padding: 8px 12px 16px; color: var(--muted); }
+footer { padding: 22px 0 40px; }
+@media (max-width: 640px) {
+  h1 { font-size: 32px; }
+  .price { font-size: 42px; }
+  .top { align-items: start; flex-direction: column; }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Price Gap · Indian retailer prices</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">₹</span>
+      <div>
+        <p class="eyebrow">Bengaluru · Google Shopping · India</p>
+        <h1>Price Gap</h1>
+      </div>
+    </div>
+    <p id="mode-pill" class="pill" hidden></p>
+  </header>
+
+  <main>
+    <section class="search-panel">
+      <form id="search-form">
+        <label>
+          Product
+          <input id="query" name="query" type="text" maxlength="120" required placeholder="Sony WH-1000XM5" autocomplete="off">
+        </label>
+        <label>
+          Shopper location
+          <input id="location" name="location" type="text" maxlength="120" value="Bengaluru, Karnataka, India">
+        </label>
+        <div class="toggles">
+          <label class="check"><input id="include-used" type="checkbox"> Include refurbished and used</label>
+          <label class="check" id="sample-wrap"><input id="force-sample" type="checkbox"> Sample data only (no API call)</label>
+        </div>
+        <button type="submit" id="go">Find the cheapest in stock</button>
+      </form>
+      <p id="form-note" class="note"></p>
+    </section>
+
+    <p id="banner" class="banner" hidden></p>
+    <p id="error" class="error" hidden></p>
+    <section id="results" hidden></section>
+  </main>
+
+  <footer>
+    <p>Local app for the SerpApi India Hackathon 2026. One Google Shopping search per live lookup. Nothing here is a purchase.</p>
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>
